@@ -15,24 +15,24 @@ class App extends Component {
     invoices: [
       {
         id: "100",
-        Vendor: "Hankook",
+        Vendor: "Amazon",
         Amount: "$1800",
-        Invoice: "",
-        Date: "08/21/2019",
+        invoice: "",
+        Date: "9/03/2020",
       },
       {
         id: "200",
-        Vendor: "Hankook",
+        Vendor: "LincolnBand",
         Amount: "$1800",
-        Invoice: "",
-        Date: "08/21/2019",
+        invoice: "",
+        Date: "9/03/2020",
       },
       {
         id: "300",
-        Vendor: "Hankook",
+        Vendor: "Amelia",
         Amount: "$1800",
-        Invoice: "",
-        Date: "08/21/2019",
+        invoice: "",
+        Date: "9/03/2020",
       },
     ],
   };
