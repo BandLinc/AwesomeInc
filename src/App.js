@@ -12,34 +12,43 @@ import {
 class App extends Component {
   state = {
     isLoading: false,
-    invoices: [
-      {
-        id: "100",
-        Vendor: "Amazon",
-        Amount: "$1800",
-        invoice: "012",
-        Date: "9/03/2020",
-      },
-      {
-        id: "200",
-        Vendor: "LincolnBand",
-        Amount: "$1800",
-        invoice: "013",
-        Date: "9/03/2020",
-      },
-      {
-        id: "300",
-        Vendor: "Amelia",
-        Amount: "$1800",
-        invoice: "045",
-        Date: "9/03/2020",
-      },
-    ],
+    // invoices: [
+    //   {
+    //     id: "100",
+    //     Vendor: "Amazon",
+    //     Amount: "$1800",
+    //     invoice: "012",
+    //     Date: "9/03/2020",
+    //   },
+    //   {
+    //     id: "200",
+    //     Vendor: "LincolnBand",
+    //     Amount: "$1800",
+    //     invoice: "013",
+    //     Date: "9/03/2020",
+    //   },
+    //   {
+    //     id: "300",
+    //     Vendor: "Amelia",
+    //     Amount: "$1800",
+    //     invoice: "045",
+    //     Date: "9/03/2020",
+    //   },
+    // ],
+    invoices: [],
   };
 
   remove(id) {
     let updatedInvoices = [...this.state.invoices].filter((i) => i.id !== id);
     this.setState({ invoices: updatedInvoices });
+  }
+
+  async componentDidMount() {
+    const response = await fetch(
+      "https://6sqnqgrf9d.execute-api.eu-west-1.amazonaws.com/Dev"
+    );
+    const body = await response.json();
+    this.setState({ invoices: body, isLoading: false });
   }
 
   render() {
